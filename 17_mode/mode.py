@@ -11,3 +11,14 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    count = {}
+
+    for num in nums:
+        if num in count:
+            count[num] = count[num] + 1
+        else:
+            count[num] = 1
+
+    most_common = max(count, key=count.get)
+
+    return most_common
